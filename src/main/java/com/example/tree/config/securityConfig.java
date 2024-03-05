@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
@@ -14,7 +16,7 @@ public class securityConfig {
         UserDetails user = User
                 .builder()
                 .username("khach")
-                .password("{bcrypt}$2a$10$crY6jtm9YG1ztCzie2XcqOLj2hg4UQwnF8VipMFY67mBe/eKk1xFC")
+                .password("$2a$10$crY6jtm9YG1ztCzie2XcqOLj2hg4UQwnF8VipMFY67mBe/eKk1xFC")
                 .roles("USER")
                 .build();
 //        UserDetails admin = User.builder()
@@ -23,5 +25,8 @@ public class securityConfig {
 //                .roles("USER", "ADMIN")
 //                .build();
         return new InMemoryUserDetailsManager(user);
+    }
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
     }
 }

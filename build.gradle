@@ -19,7 +19,11 @@ dependencies {
 	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
 	annotationProcessor 'org.projectlombok:lombok:1.18.30'
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.7.6'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '3.2.3'
 
+	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
